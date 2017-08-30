@@ -53,6 +53,17 @@ setup_localrc () {
 	fi
 }
 
+setup_scripts () {
+	if ! [ -f zsh/scripts.zsh ]
+	then
+		info 'setup scripts'
+
+		cp zsh/scripts.zsh.example zsh/scripts.zsh
+
+		success 'scripts'
+	fi
+}
+
 link_file () {
 	local src=$1 dst=$2
 
@@ -142,6 +153,7 @@ install_dotfiles () {
 
 setup_gitconfig
 setup_localrc
+setup_scripts
 install_dotfiles
 
 echo ''

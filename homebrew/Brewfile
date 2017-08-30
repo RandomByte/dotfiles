@@ -1,6 +1,6 @@
 brew 'diff-so-fancy'
 brew 'gti'
-brew 'maven'
+##brew 'maven'
 brew 'pyenv'
 brew 'rbenv'
 brew 'ruby-build'

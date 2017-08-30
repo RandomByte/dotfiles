@@ -1,2 +1,5 @@
 git/gitconfig.local.symlink
 zsh/localrc.symlink
+zsh/scripts.zsh
+bin
+!bin/dot

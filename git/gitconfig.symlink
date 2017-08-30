@@ -4,29 +4,53 @@
 [core]
 	autocrlf = input
 	editor = vim
+	trustctime = false
+	ignorecase = false
+	preloadindex = true
+	fscache = true
 [pull]
 	rebase = true
 [push]
 	default = simple
 [alias]
+	last = log -1 --stat
+	cp = cherry-pick
 	co = checkout
 	cob = checkout -b
 	com = checkout master
-	delete-merged = !git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d
+	cl = clone
+	ci = commit
+	st = status -sb
+	br = branch
+	bi = bisect
+	unstage = reset HEAD --
+	dc = diff --cached
+	ds = diff --staged
 	lg = log --oneline --decorate --graph
-	lga = log --oneline --decorate --graph --all
-	count = shortlog -sn
-	nb = "!f() { git checkout -b $1 origin/master; }; f"
+	lga = log --oneline --graph --decorate --all
+	b = branch
+	l = log --oneline --graph --decorate --all -5
+	lb = log --oneline --graph --decorate -5
+	lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative
+	dff = git diff --color-words
 	ca = commit --amend
 	can = commit --amend --no-edit
 	cm = commit -m
 	ap = add -p
-	log-gerrit-changes = !git branch | grep -v \"\\*\" | xargs -n 1 -I {} sh -c \"echo {} && git log -n 1 --format=%B --decorate {} -- | awk 'NR==1 || /Change-Id/' && echo\"
 	cpx = cherry-pick -x
-	st = status -sb
-	ds = diff --staged
+	count = shortlog -sn
+	cob = checkout -b
+	nb = "!f() { git checkout -b $1 origin/master; }; f"
+	wip = commit -am "WIP"
+	delete-merged = !git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d
+	force = push -f
+	horse = push -f
+	last-tag = describe --abbrev=0 --tags
+	log-gerrit-changes = !git branch | grep -v \"\\*\" | xargs -n 1 -I {} sh -c \"echo {} && git log -n 1 --format=%B --decorate {} -- | awk 'NR==1 || /Change-Id/' && echo\"
+
 	# Credits: https://stackoverflow.com/a/5188364
 	recent = !git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' | head
+
 [rerere]
 	enabled = true
 	autoupdate = true

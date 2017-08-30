@@ -16,6 +16,7 @@ source $ZSH/system/proxy.zsh
 # ZSH
 source $ZSH/zsh/aliases.zsh
 source $ZSH/zsh/config.zsh
+source $ZSH/zsh/scripts.zsh
 
 # OS X
 source $ZSH/macos/aliases.zsh
@@ -25,9 +26,6 @@ source $ZSH/homebrew/env.zsh
 
 # thefuck
 source $ZSH/thefuck/aliases.zsh
-
-# nvm
-source $ZSH/nvm/init.zsh
 
 # Ruby
 source $ZSH/ruby/env.zsh
