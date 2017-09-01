@@ -9,3 +9,7 @@ cdp () {
   done
   OLDPWD=$TEMP_PWD
 }
+
+ssh-pw () {
+  ssh -o PubkeyAuthentication=no $1
+}
