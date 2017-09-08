@@ -11,5 +11,9 @@ export DOT_screenshot_dir="$HOME/Desktop"
 # Location for homebrew
 export HOMEBREW_HOME=~/.homebrew
 
+# Store bash history per terminal session/window
+export HISTFILE="$HOME/.bash_history_$TERM_SESSION_ID"
+if [ ! -e $HISTFILE ]; then cp "$HOME/.bash_history" "$HISTFILE"; fi
+
 # Configure Git Trainer Mode (see dotfiles/functions/prompt_pure_setup)
 #export PURE_GIT_PULL=0
