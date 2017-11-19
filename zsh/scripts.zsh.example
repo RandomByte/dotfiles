@@ -13,3 +13,7 @@ cdp () {
 ssh-pw () {
   ssh -o PubkeyAuthentication=no $1
 }
+
+keygen () {
+  ssh-keygen -t rsa -b 4096 -C $(hostname)
+}
