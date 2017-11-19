@@ -13,3 +13,6 @@ export HOMEBREW_HOME=~/.homebrew
 
 # Configure Git Trainer Mode (see dotfiles/functions/prompt_pure_setup)
 #export PURE_GIT_PULL=0
+
+# Go
+export GOPATH=$HOME/work
