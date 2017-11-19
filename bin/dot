@@ -12,3 +12,8 @@ source $ZSH/homebrew/env.zsh
 
 # Update homebrew
 $ZSH/homebrew/update.sh
+
+# Retrieve latest docker completions
+mkdir -p $ZSH/docker
+curl -L https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker > $ZSH/docker/_docker
+curl -L https://raw.githubusercontent.com/docker/compose/master/contrib/completion/zsh/_docker-compose > $ZSH/docker/_docker-compose

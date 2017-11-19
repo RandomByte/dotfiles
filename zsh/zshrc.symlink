@@ -43,3 +43,4 @@ source $ZSH/zsh/prompt.zsh
 # Autocomplete
 source $ZSH/zsh/completion.zsh
 source $ZSH/git/completion.zsh
+export fpath=($ZSH/docker $fpath)

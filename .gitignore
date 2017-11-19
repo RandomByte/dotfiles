@@ -3,3 +3,4 @@ zsh/localrc.symlink
 zsh/scripts.zsh
 bin
 !bin/dot
+docker/
