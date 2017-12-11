@@ -17,3 +17,7 @@ ssh-pw () {
 keygen () {
   ssh-keygen -t rsa -b 4096 -C $(hostname)
 }
+
+remove-ds-store-files {
+  find . -name '.DS_Store' -type f -delete
+}
