@@ -9,5 +9,12 @@ brew 'tree'
 brew 'vim'
 brew 'wget'
 brew 'htop'
+brew 'zsh-completions'
+brew 'kubectl'
+brew 'git-lfs'
 
 cask 'aerial'
+cask 'minikube'
+
+brew tap moncho/dry
+brew 'dry'

@@ -41,6 +41,10 @@ source $ZSH/xcode/aliases.zsh
 source $ZSH/zsh/prompt.zsh
 
 # Autocomplete
+export fpath=($HOMEBREW_HOME/share/zsh-completions $fpath)
+export fpath=($ZSH/docker $fpath)
 source $ZSH/zsh/completion.zsh
 source $ZSH/git/completion.zsh
-export fpath=($ZSH/docker $fpath)
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi
