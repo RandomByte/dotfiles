@@ -43,7 +43,6 @@
 	cob = checkout -b
 	nb = "!f() { git checkout -b $1 origin/master; }; f"
 	wip = commit -am "WIP"
-	delete-merged = !git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d
 	force = push -f
 	horse = push -f
 	rc = rebase --continue
@@ -54,7 +53,13 @@
 
 	# Credits: https://stackoverflow.com/a/5188364
 	recent = !git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' | head
+	outdated = !git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' | head
 
+	delete-merged = !git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d
+	# Credits: https://stackoverflow.com/a/30494276
+	delete-gone = !git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
+
+	show-gone = !git branch -vv | awk '/: gone]/{print $1}'
 [rerere]
 	enabled = true
 	autoupdate = true
@@ -87,3 +92,10 @@
 	remoteBranch = red reverse
 	tag = blue reverse
 	commit = yellow
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[fetch]
+	prune = true
