@@ -55,11 +55,12 @@
 	recent = !git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' | head
 	outdated = !git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' | head
 
-	delete-merged = !git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d
 	# Credits: https://stackoverflow.com/a/30494276
 	delete-gone = !git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
-
 	show-gone = !git branch -vv | awk '/: gone]/{print $1}'
+
+	show-merged = !git branch --merged | grep -v \"\\*\"
+	delete-merged = !git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d
 [rerere]
 	enabled = true
 	autoupdate = true
