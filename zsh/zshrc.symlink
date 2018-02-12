@@ -48,3 +48,5 @@ source $ZSH/git/completion.zsh
 if [ $commands[kubectl] ]; then
   source <(kubectl completion zsh)
 fi
+
+source $HOMEBREW_HOME/share/zsh-autosuggestions/zsh-autosuggestions.zsh
