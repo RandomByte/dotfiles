@@ -9,7 +9,7 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Default user login shell
-sudo chsh -s /bin/zsh
+sudo chsh -s $HOMEBREW_HOME/bin/zsh
 
 ###############################################################################
 # General UI/UX                                                               #
