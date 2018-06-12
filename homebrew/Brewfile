@@ -24,3 +24,6 @@ brew 'dry'
 
 brew tap tazjin/kontemplate https://github.com/tazjin/kontemplate
 brew 'kontemplate'
+
+brew tap git-chglog/git-chglog
+brew install git-chglog
