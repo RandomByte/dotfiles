@@ -13,4 +13,5 @@ alias copy="pbcopy"
 alias get="curl -O -L"
 
 # Execute meta and always exclude the root-/meta-directory
-alias m="meta $1 --exclude ${PWD##*/}"
+alias m='meta $1 --exclude ${PWD##*/}'
+alias me='meta exec $1 --exclude ${PWD##*/}'
