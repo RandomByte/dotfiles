@@ -14,7 +14,3 @@ alias copy="pbcopy"
 # From https://github.com/sapegin/dotfiles/blob/master/zsh/aliases.zsh
 # Download file and save it with filename of remote file
 alias get="curl -O -L"
-
-# Execute meta and always exclude the root-/meta-directory
-alias m='meta $1 --exclude ${PWD##*/}'
-alias me='meta exec $1 --exclude ${PWD##*/}'
