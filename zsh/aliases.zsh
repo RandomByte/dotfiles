@@ -3,8 +3,11 @@ alias reload!='. ~/.zshrc'
 alias such='git'
 alias very='git'
 alias wow='git status -sb'
+alias got='git'
 
 alias k='kubectl'
+alias bwd='pwd | sed -e "s:/:🥖:g"'
+alias lg="lazygit"
 
 alias copy="pbcopy"
 
