@@ -27,7 +27,9 @@
 	dc = diff --cached
 	ds = diff --staged
 	lg = log --oneline --decorate --graph
+	lgf = log --oneline --decorate --graph --no-merges
 	lga = log --oneline --graph --decorate --all
+	lgaf = log --oneline --graph --decorate --all --no-merges
 	b = branch
 	l = log --oneline --graph --decorate --all -5
 	lb = log --oneline --graph --decorate -5
