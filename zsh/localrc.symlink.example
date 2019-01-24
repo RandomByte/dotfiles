@@ -14,5 +14,8 @@ export HOMEBREW_HOME=~/.homebrew
 # Configure Git Trainer Mode (see dotfiles/functions/prompt_pure_setup)
 #export PURE_GIT_PULL=0
 
+# Vim
+export VIMRUNTIME=$HOMEBREW_HOME/share/vim/vim81
+
 # Go
 export GOPATH=$HOME/work
