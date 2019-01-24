@@ -40,9 +40,9 @@ remove-ds-store-files() {
 
 # Execute meta and always exclude the root meta-directory
 m() {
-  meta --exclude "${PWD##*/}" "$@"
+  meta "$@" --exclude "${PWD##*/}" --exit-on-aggregate-error
 }
 
 me() {
-  meta exec --exclude "${PWD##*/}" "$*"
+  meta exec "$*" --exclude "${PWD##*/}" --exit-on-aggregate-error
 }
