@@ -61,3 +61,7 @@ kubectl () { # lazy load of kubectl completions (they take ~500ms to load)
 source $HOMEBREW_HOME/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 #zprof # profiling end
+export PATH="$ZSH/bin/yarn-rc/bin:$PATH"
+export NVM_DIR="$NVM_HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

@@ -10,6 +10,8 @@
 	fscache = true
 [pull]
 	rebase = true
+[rebase]
+	autostash = true
 [push]
 	default = simple
 [alias]
@@ -52,6 +54,8 @@
 	last-tag = describe --abbrev=0 --tags
 	log-gerrit-changes = !git branch | grep -v \"\\*\" | xargs -n 1 -I {} sh -c \"echo {} && git log -n 1 --format=%B --decorate {} -- | awk 'NR==1 || /Change-Id/' && echo\"
 
+	# Credits: https://www.praqma.com/stories/git-autostash/
+	up = !git fetch && git rebase --autostash FETCH_HEAD
 
 	# Credits: https://stackoverflow.com/a/5188364
 	recent = !git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' | head
@@ -102,3 +106,6 @@
 	required = true
 [fetch]
 	prune = true
+[merge "npm-merge-driver"]
+	name = automatically merge npm lockfiles
+	driver = npx npm-merge-driver merge %A %O %B %P

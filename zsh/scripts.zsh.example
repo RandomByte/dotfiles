@@ -46,3 +46,9 @@ m() {
 me() {
   meta exec "$*" --exclude "${PWD##*/}" --exit-on-aggregate-error
 }
+
+md ()
+{
+    mkdir -p -- "$1" &&
+      cd -P -- "$1" || return
+}
