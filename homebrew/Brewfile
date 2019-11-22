@@ -2,7 +2,7 @@ brew 'zsh'
 brew 'diff-so-fancy'
 brew 'gti'
 brew 'sl'
-##brew 'maven'
+brew 'maven'
 brew 'pyenv'
 brew 'rbenv'
 brew 'ruby-build'
@@ -18,18 +18,15 @@ brew 'kubectl'
 brew 'git-lfs'
 brew 'hub'
 brew 'shellcheck'
+brew 'jq'
 
 cask 'aerial'
-cask 'minikube'
 
-brew tap moncho/dry
+tap 'moncho/dry'
 brew 'dry'
 
-brew tap tazjin/kontemplate https://github.com/tazjin/kontemplate
-brew 'kontemplate'
+tap 'git-chglog/git-chglog'
+brew 'git-chglog'
 
-brew tap git-chglog/git-chglog
-brew install git-chglog
-
-brew tap jesseduffield/lazygit
-brew install lazygit
+tap 'jesseduffield/lazygit'
+brew 'lazygit'
