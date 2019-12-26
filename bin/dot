@@ -6,12 +6,21 @@
 # to make sure you're on the latest and greatest.
 export ZSH=$HOME/.dotfiles
 
-# Install homebrew
-$ZSH/homebrew/install.sh 2>&1
-source $ZSH/homebrew/env.zsh
 
-# Update homebrew
-$ZSH/homebrew/update.sh
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	# macOS only
+	# Install homebrew
+	$ZSH/homebrew/install.sh 2>&1
+	source $ZSH/homebrew/env.zsh
+
+	# Update homebrew
+	$ZSH/homebrew/update.sh
+else
+	# Linux only
+	# Retrieve some binaries
+	curl -L https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy > $ZSH/bin/diff-so-fancy
+	chmod +x $ZSH/bin/diff-so-fancy
+fi
 
 # Retrieve latest docker completions
 mkdir -p $ZSH/docker

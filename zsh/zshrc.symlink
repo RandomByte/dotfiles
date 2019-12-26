@@ -23,11 +23,16 @@ source $ZSH/zsh/aliases.zsh
 source $ZSH/zsh/config.zsh
 source $ZSH/zsh/scripts.zsh
 
-# OS X
-source $ZSH/macos/aliases.zsh
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	# OS X
+	source $ZSH/macos/aliases.zsh
 
-# Homebrew
-source $ZSH/homebrew/env.zsh
+	# Homebrew
+	source $ZSH/homebrew/env.zsh
+
+	# Xcode
+	source $ZSH/xcode/aliases.zsh
+fi
 
 # thefuck
 source $ZSH/thefuck/aliases.zsh
@@ -39,14 +44,14 @@ source $ZSH/ruby/init.zsh
 # Python
 source $ZSH/python/init.zsh
 
-# Xcode
-source $ZSH/xcode/aliases.zsh
-
 # Prompt
 source $ZSH/zsh/prompt.zsh
 
 # Autocomplete
-export fpath=($HOMEBREW_HOME/share/zsh-completions $fpath)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	export fpath=($HOMEBREW_HOME/share/zsh-completions $fpath)
+	source $HOMEBREW_HOME/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 export fpath=($ZSH/docker $fpath)
 source $ZSH/zsh/completion.zsh
 source $ZSH/git/completion.zsh
@@ -60,10 +65,9 @@ kubectl () { # lazy load of kubectl completions (they take ~500ms to load)
     $commands[kubectl] $*
 }
 
-source $HOMEBREW_HOME/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 #zprof # profiling end
-export PATH="$ZSH/bin/yarn-rc/bin:$PATH"
+
 export NVM_DIR="$NVM_HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
