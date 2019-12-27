@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # dot
 #
@@ -17,9 +17,48 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	$ZSH/homebrew/update.sh
 else
 	# Linux only
+	$ZSH/apt/install.sh
+
 	# Retrieve some binaries
 	curl -L https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy > $ZSH/bin/diff-so-fancy
 	chmod +x $ZSH/bin/diff-so-fancy
+
+	rm -rf $ZSH/z/
+	mkdir -p $ZSH/z/
+	curl -L https://github.com/rupa/z/archive/v1.9.tar.gz | tar xvz -C $ZSH/z/
+	mv $ZSH/z/z-1.9/* $ZSH/z/ #*/
+	rmdir $ZSH/z/z-1.9
+
+
+	# Install zsh-completions
+	if [ -d "$ZSH/repositories/zsh-completions" ]; then
+		echo "Updating zsh-completions repository clone..."
+		(cd "$ZSH/repositories/zsh-completions" && git pull)
+	else
+		echo "Cloning zsh-completions repository..."
+		mkdir -p $ZSH/repositories/
+		git clone git://github.com/zsh-users/zsh-completions.git $ZSH/repositories/zsh-completions
+	fi
+	# force rebuild zcompdump after autocompletion update
+	rm -f ~/.zcompdump
+
+	# Install zsh-autosuggestions
+	if [ -d "$ZSH/repositories/zsh-autosuggestions" ]; then
+		echo "Updating zsh-autosuggestions repository clone..."
+		(cd "$ZSH/repositories/zsh-autosuggestions" && git pull)
+	else
+		echo "Cloning zsh-autosuggestions repository..."
+		git clone git://github.com/zsh-users/zsh-autosuggestions.git $ZSH/repositories/zsh-autosuggestions
+	fi
+
+	# Install zsh-syntax-highlighting
+	if [ -d "$ZSH/repositories/zsh-syntax-highlighting" ]; then
+		echo "Updating zsh-syntax-highlighting repository clone..."
+		(cd "$ZSH/repositories/zsh-syntax-highlighting" && git pull)
+	else
+		echo "Cloning zsh-syntax-highlighting repository..."
+		git clone git://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH/repositories/zsh-syntax-highlighting
+	fi
 fi
 
 # Retrieve latest docker completions

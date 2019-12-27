@@ -51,10 +51,16 @@ source $ZSH/zsh/prompt.zsh
 if [[ "$OSTYPE" == "darwin"* ]]; then
 	export fpath=($HOMEBREW_HOME/share/zsh-completions $fpath)
 	source $HOMEBREW_HOME/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+else
+	export fpath=($ZSH/repositories/zsh-completions $fpath)
+	source $ZSH/repositories/zsh-autosuggestions/zsh-autosuggestions.zsh
+	source $ZSH/repositories/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 export fpath=($ZSH/docker $fpath)
 source $ZSH/zsh/completion.zsh
 source $ZSH/git/completion.zsh
+
+. $ZSH/z/z.sh
 
 kubectl () { # lazy load of kubectl completions (they take ~500ms to load)
     if [[ -z $KUBECTL_COMPLETE ]]
@@ -64,7 +70,6 @@ kubectl () { # lazy load of kubectl completions (they take ~500ms to load)
     fi
     $commands[kubectl] $*
 }
-
 
 #zprof # profiling end
 

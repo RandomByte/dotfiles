@@ -4,3 +4,5 @@ zsh/scripts.zsh
 bin
 !bin/dot
 docker/
+repositories/
+z/
