@@ -6,6 +6,15 @@
 # to make sure you're on the latest and greatest.
 export ZSH=$HOME/.dotfiles
 
+mkdir -p $ZSH/repositories/
+
+if [ -d "$ZSH/repositories/pure" ]; then
+	echo "Updating pure repository clone..."
+	(cd "$ZSH/repositories/pure" && git pull)
+else
+	echo "Cloning pure repository..."
+	git clone git://github.com/sindresorhus/pure.git "$ZSH/repositories/pure"
+fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
 	# macOS only
@@ -36,8 +45,7 @@ else
 		(cd "$ZSH/repositories/zsh-completions" && git pull)
 	else
 		echo "Cloning zsh-completions repository..."
-		mkdir -p $ZSH/repositories/
-		git clone git://github.com/zsh-users/zsh-completions.git $ZSH/repositories/zsh-completions
+		git clone git://github.com/zsh-users/zsh-completions.git "$ZSH/repositories/zsh-completions"
 	fi
 	# force rebuild zcompdump after autocompletion update
 	rm -f ~/.zcompdump
@@ -48,7 +56,7 @@ else
 		(cd "$ZSH/repositories/zsh-autosuggestions" && git pull)
 	else
 		echo "Cloning zsh-autosuggestions repository..."
-		git clone git://github.com/zsh-users/zsh-autosuggestions.git $ZSH/repositories/zsh-autosuggestions
+		git clone git://github.com/zsh-users/zsh-autosuggestions.git "$ZSH/repositories/zsh-autosuggestions"
 	fi
 
 	# Install zsh-syntax-highlighting
@@ -57,7 +65,7 @@ else
 		(cd "$ZSH/repositories/zsh-syntax-highlighting" && git pull)
 	else
 		echo "Cloning zsh-syntax-highlighting repository..."
-		git clone git://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH/repositories/zsh-syntax-highlighting
+		git clone git://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH/repositories/zsh-syntax-highlighting"
 	fi
 fi
 
