@@ -32,14 +32,14 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
 	# Xcode
 	source $ZSH/xcode/aliases.zsh
+
+	# Ruby
+	source $ZSH/ruby/env.zsh
+	source $ZSH/ruby/init.zsh
 fi
 
 # thefuck
 source $ZSH/thefuck/aliases.zsh
-
-# Ruby
-source $ZSH/ruby/env.zsh
-source $ZSH/ruby/init.zsh
 
 # Python
 source $ZSH/python/init.zsh
