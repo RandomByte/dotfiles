@@ -45,6 +45,7 @@ install lm-sensors
 install undistract-me
 install openssh-server
 install hub
+install neofetch
 
 install lolcat
 install gti
