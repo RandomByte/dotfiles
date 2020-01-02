@@ -19,6 +19,7 @@ brew 'git-lfs'
 brew 'hub'
 brew 'shellcheck'
 brew 'jq'
+brew 'yarn'
 
 cask 'aerial'
 
