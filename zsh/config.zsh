@@ -7,7 +7,9 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6c6c6c"
+if [[ `uname` == "Linux" ]]; then
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6c6c6c"
+fi
 
 setopt NO_BG_NICE # don't nice background tasks
 setopt NO_HUP
