@@ -73,3 +73,8 @@ fi
 mkdir -p $ZSH/docker
 curl -L https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker > $ZSH/docker/_docker
 curl -L https://raw.githubusercontent.com/docker/compose/master/contrib/completion/zsh/_docker-compose > $ZSH/docker/_docker-compose
+
+# Retrieve z.sh
+mkdir -p $ZSH/z
+curl -L https://raw.githubusercontent.com/rupa/z/v1.11/z.sh > $ZSH/z/z.sh
+chmod +x $ZSH/z/z.sh
