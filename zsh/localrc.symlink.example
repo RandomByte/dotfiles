@@ -13,7 +13,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	export HOMEBREW_HOME=~/.homebrew
 
 	# Vim
-	export VIMRUNTIME=$HOMEBREW_HOME/share/vim/vim81
+	export VIMRUNTIME=$HOMEBREW_HOME/share/vim/vim82
 fi
 
 # Configure Git Trainer Mode (see dotfiles/functions/prompt_pure_setup)
