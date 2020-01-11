@@ -14,3 +14,7 @@ alias copy="pbcopy"
 # From https://github.com/sapegin/dotfiles/blob/master/zsh/aliases.zsh
 # Download file and save it with filename of remote file
 alias get="curl -O -L"
+
+if [[ `uname` == "Linux" ]]; then
+	alias open="xdg-open"
+fi
