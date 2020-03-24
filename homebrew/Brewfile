@@ -20,6 +20,7 @@ brew 'hub'
 brew 'shellcheck'
 brew 'jq'
 brew 'yarn'
+brew 'fd'
 
 cask 'aerial'
 
