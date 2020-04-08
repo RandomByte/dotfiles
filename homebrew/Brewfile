@@ -2,7 +2,7 @@ brew 'zsh'
 brew 'diff-so-fancy'
 brew 'gti'
 brew 'sl'
-brew 'maven'
+brew 'maven', args: ['ignore-dependencies']
 brew 'pyenv'
 brew 'rbenv'
 brew 'ruby-build'
@@ -32,3 +32,6 @@ brew 'git-chglog'
 
 tap 'jesseduffield/lazygit'
 brew 'lazygit'
+
+tap 'adoptopenjdk/openjdk'
+cask 'adoptopenjdk8'
