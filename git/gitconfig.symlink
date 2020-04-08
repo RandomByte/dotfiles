@@ -22,6 +22,7 @@
 	com = checkout master
 	cl = clone
 	ci = commit
+	comimt = commit
 	st = status -sb
 	br = branch
 	bi = bisect
@@ -53,12 +54,14 @@
 	ra = rebase --abort
 	last-tag = describe --abbrev=0 --tags
 	log-gerrit-changes = !git branch | grep -v \"\\*\" | xargs -n 1 -I {} sh -c \"echo {} && git log -n 1 --format=%B --decorate {} -- | awk 'NR==1 || /Change-Id/' && echo\"
+	superclean = git clean -dfX
 
 	# Credits: https://www.praqma.com/stories/git-autostash/
 	up = !git fetch && git rebase --autostash FETCH_HEAD
 
 	# Credits: https://stackoverflow.com/a/5188364
-	recent = !git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' | head
+	recent = !git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset))' | head
+	recent-commit-info = !git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' | head
 	outdated = !git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' | head
 
 	# Credits: https://stackoverflow.com/a/30494276
