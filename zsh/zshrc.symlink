@@ -70,6 +70,14 @@ kubectl () { # lazy load of kubectl completions (they take ~500ms to load)
     fi
     $commands[kubectl] $*
 }
+helm () { # lazy load of helm completions
+    if [[ -z $HELM_COMPLETE ]]
+    then
+        source <($commands[helm] completion zsh)
+        HELM_COMPLETE=1
+    fi
+    $commands[helm] $*
+}
 
 #zprof # profiling end
 
