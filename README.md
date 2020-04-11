@@ -23,6 +23,15 @@ cd ~/.dotfiles
 This will symlink the appropriate files in `.dotfiles` to your home directory.
 Everything is configured and tweaked within `~/.dotfiles`.
 
+Next install or upgrade everything else:
+```sh
+~/.dotfiles/bin/dot
+```
+
+*In the future, you can upgrade dependencies by executing `dot`.*
+
+On Ubuntu you actually need to reboot now in order to get zsh as the default shell in gnome-terminal.
+
 ## Credits
 
 Started as fork of [holman's dotfiles](https://github.com/holman/dotfiles) but removed a lot of magic in [`zsh/zshrc.symlink`](./zsh/zshrc.symlink) to just manually source other `zsh` files. Also removed the `install` script and moved `bootstrap` into the root folder.

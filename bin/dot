@@ -17,7 +17,8 @@ else
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-	# macOS only
+	# == macOS only ==
+
 	# Install homebrew
 	$ZSH/homebrew/install.sh 2>&1
 	source $ZSH/homebrew/env.zsh
@@ -25,10 +26,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	# Update homebrew
 	$ZSH/homebrew/update.sh
 else
-	# Linux only
+	# == Linux only ==
 
 	$ZSH/apt/install.sh
-	$ZSH/themes/gnome-terminal/import.sh
 
 	# Retrieve some binaries
 	curl -L https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy > $ZSH/bin/diff-so-fancy
@@ -39,7 +39,6 @@ else
 	curl -L https://github.com/rupa/z/archive/v1.9.tar.gz | tar xvz -C $ZSH/z/
 	mv $ZSH/z/z-1.9/* $ZSH/z/ #*/
 	rmdir $ZSH/z/z-1.9
-
 
 	# Install zsh-completions
 	if [ -d "$ZSH/repositories/zsh-completions" ]; then
@@ -68,6 +67,21 @@ else
 	else
 		echo "Cloning zsh-syntax-highlighting repository..."
 		git clone git://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH/repositories/zsh-syntax-highlighting"
+	fi
+
+	# Install gnome-terminal theme Nord
+	if [ -d "$ZSH/repositories/nord-gnome-terminal" ]; then
+		echo "Updating nord-gnome-terminal repository clone..."
+		(cd "$ZSH/repositories/nord-gnome-terminal" && git pull)
+	else
+		echo "Cloning nord-gnome-terminal repository..."
+		git clone https://github.com/arcticicestudio/nord-gnome-terminal.git "$ZSH/repositories/nord-gnome-terminal"
+	fi
+	$ZSH/repositories/nord-gnome-terminal/src/nord.sh
+
+	if [ -z "$ZSH_Name" ]; then
+		echo "Detected non-zsh shell. Changing shell to zsh..."
+		chsh -s /usr/bin/zsh
 	fi
 fi
 
