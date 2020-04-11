@@ -17,4 +17,6 @@ alias get="curl -O -L"
 
 if [[ `uname` == "Linux" ]]; then
 	alias open="xdg-open"
+	alias .ssh=themed-ssh-replace-window
+	alias .sshn=themed-ssh-new-window
 fi

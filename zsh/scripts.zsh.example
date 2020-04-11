@@ -49,6 +49,14 @@ me() {
 
 md ()
 {
-    mkdir -p -- "$1" &&
-      cd -P -- "$1" || return
+  mkdir -p -- "$1" &&
+    cd -P -- "$1" || return
+}
+
+themed-ssh-replace-window () {
+  gnome-terminal --window-with-profile="Nord SSH" -- ssh $@;exit;
+}
+
+themed-ssh-new-window () {
+  gnome-terminal --window-with-profile="Nord SSH" -- ssh $@;
 }
