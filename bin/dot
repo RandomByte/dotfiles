@@ -26,7 +26,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	$ZSH/homebrew/update.sh
 else
 	# Linux only
+
 	$ZSH/apt/install.sh
+	$ZSH/themes/gnome-terminal/import.sh
 
 	# Retrieve some binaries
 	curl -L https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy > $ZSH/bin/diff-so-fancy
