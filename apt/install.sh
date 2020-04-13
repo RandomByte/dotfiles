@@ -46,6 +46,7 @@ install undistract-me
 install openssh-server
 install hub
 install neofetch
+install fd-find
 
 install lolcat
 install gti
