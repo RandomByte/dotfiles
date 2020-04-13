@@ -1,4 +1,7 @@
 # load pure prompt
 autoload -U promptinit && promptinit
 prompt pure
-PURE_PROMPT_SYMBOL="￥"
+
+if [[ `uname` == "Linux" ]]; then
+	PURE_PROMPT_SYMBOL="￥"
+fi
