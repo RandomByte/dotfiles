@@ -79,7 +79,7 @@ else
 	fi
 	$ZSH/repositories/nord-gnome-terminal/src/nord.sh
 
-	if [ -z "$ZSH_Name" ]; then
+	if [ -z "$ZSH_NAME" ]; then
 		echo "Detected non-zsh shell. Changing shell to zsh..."
 		chsh -s /usr/bin/zsh
 	fi
