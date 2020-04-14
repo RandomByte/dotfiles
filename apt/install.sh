@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 if [[ `uname` != "Linux" ]]; then
     echo "This install script is for Linux only and requires APT"; exit 1
 fi
@@ -7,13 +9,11 @@ fi
 sudo apt update
 
 function install {
-  which $1 &> /dev/null
-
-  if [ $? -ne 0 ]; then
+  if dpkg -s $1 >/dev/null 2>&1; then
+    echo "Already installed: ${1}"
+  else
     echo "Installing: ${1}..."
     sudo apt install -y $1
-  else
-    echo "Already installed: ${1}"
   fi
 }
 
@@ -48,7 +48,7 @@ install neofetch
 install fd-find
 
 install lolcat
-install gti
+# install gti
 install sl
 install figlet
 
