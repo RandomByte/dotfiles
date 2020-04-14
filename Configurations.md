@@ -4,6 +4,22 @@ Various configurations for tools which are not (yet?) automatically configured.
 ## Ubuntu
 ### Sublime
 
+**Settings**
+```json
+{
+	"color_scheme": "Monokai.sublime-color-scheme",
+	"font_size": 11,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"theme": "Default.sublime-theme",
+    "show_encoding": true,
+    "shift_tab_unindent": true,
+}
+
+```
+
 **Key Bindings**
 ```json
 [
