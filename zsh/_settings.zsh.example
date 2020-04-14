@@ -1,0 +1,11 @@
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # HOMEBREW
+    export HOMEBREW_HOME=$HOME/.homebrew
+fi
+
+# n home dir (https://github.com/tj/n)
+export N_PREFIX=$HOME/.n
+
+# Go
+export GOPATH=$HOME/dev/go
+

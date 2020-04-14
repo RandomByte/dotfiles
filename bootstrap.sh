@@ -64,6 +64,17 @@ setup_scripts () {
 	fi
 }
 
+setup_settings () {
+	if ! [ -f zsh/_settings.zsh ]
+	then
+		info 'setup settings'
+
+		cp zsh/_settings.zsh.example zsh/_settings.zsh
+
+		success 'settings'
+	fi
+}
+
 link_file () {
 	local src=$1 dst=$2
 

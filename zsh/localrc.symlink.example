@@ -9,19 +9,9 @@ export DOT_screenshot_dir="$HOME/Desktop"
 #export npm_config_registry="http://npm.example.com"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-	# Location for homebrew
-	export HOMEBREW_HOME=~/.homebrew
-
 	# Vim
 	export VIMRUNTIME=$HOMEBREW_HOME/share/vim/vim82
 fi
 
 # Configure Git Trainer Mode (see dotfiles/functions/prompt_pure_setup)
 #export PURE_GIT_PULL=0
-
-# Go
-export GOPATH=$HOME/work
-
-# n - https://github.com/tj/n
-export N_PREFIX=$HOME/.n
-export PATH=$N_PREFIX/bin:$PATH
