@@ -19,3 +19,11 @@ Various configurations for tools which are not (yet?) automatically configured.
 	{ "keys": ["ctrl+down"], "command": "select_lines", "args": {"forward": true } },
 ]
 ```
+
+## GNOME Terminal
+### Fix .zprofile is not read
+*[Source](https://askubuntu.com/questions/708924/zprofile-is-not-read-on-graphical-login-when-user-s-default-shell-is-zsh)*
+
+1. Go to Edit -> Profile Preferences.
+2. Select the Title and Command tab.
+3. Notice how the Run command as login shell checkbox is unchecked! Check it.
