@@ -81,9 +81,13 @@ else
 	fi
 	$ZSH/repositories/nord-gnome-terminal/src/nord.sh
 
-	if [ -z "$ZSH_NAME" ]; then
-		echo "Detected non-zsh shell. Changing shell to zsh..."
+	echo "Do you wish to change the users login shell to /usr/bin/zsh?"
+	read chsh_answer
+	if [ "$chsh_answer" != "${chsh_answer#[Yy]}" ] ;then
+		echo "Changing login shell..."
 		chsh -s /usr/bin/zsh
+	else
+		echo "Skipping login shell change..."
 	fi
 fi
 
