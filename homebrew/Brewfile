@@ -2,7 +2,7 @@ brew 'zsh'
 brew 'diff-so-fancy'
 brew 'gti'
 brew 'sl'
-brew 'maven', args: ['ignore-dependencies']
+brew 'maven', args: ['ignore-dependencies'] # use jdk8 installed below
 brew 'pyenv'
 brew 'rbenv'
 brew 'ruby-build'
@@ -19,8 +19,9 @@ brew 'git-lfs'
 brew 'hub'
 brew 'shellcheck'
 brew 'jq'
-brew 'yarn'
+brew 'yarn', args: ['ignore-dependencies'] # use node installed through n
 brew 'fd'
+brew 'n'
 
 cask 'aerial'
 
