@@ -1,9 +1,6 @@
 # Profiling start
 #zmodload zsh/zprof
 
-# shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
-
 export LANG=en_US.UTF-8
 
 # Stash your tty environment variables in ~/.localrc.
