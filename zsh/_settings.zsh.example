@@ -8,4 +8,3 @@ export N_PREFIX=$HOME/.n
 
 # Go
 export GOPATH=$HOME/dev/go
-

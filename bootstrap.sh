@@ -165,6 +165,7 @@ install_dotfiles () {
 setup_gitconfig
 setup_localrc
 setup_scripts
+setup_settings
 install_dotfiles
 
 echo ''
