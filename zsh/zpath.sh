@@ -1,4 +1,4 @@
-source $ZSH/zsh/_settings.zsh
+source $ZSH/zsh/_settings.sh
 
 # see http://zsh.sourceforge.net/Guide/zshguide02.html#l24
 

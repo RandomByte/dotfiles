@@ -65,11 +65,11 @@ setup_scripts () {
 }
 
 setup_settings () {
-	if ! [ -f zsh/_settings.zsh ]
+	if ! [ -f zsh/_settings.sh ]
 	then
 		info 'setup settings'
 
-		cp zsh/_settings.zsh.example zsh/_settings.zsh
+		cp zsh/_settings.sh.example zsh/_settings.sh
 
 		success 'settings'
 	fi

@@ -1,7 +1,7 @@
 git/gitconfig.local.symlink
 zsh/localrc.symlink
 zsh/scripts.zsh
-zsh/_settings.zsh
+zsh/_settings.sh
 bin
 !bin/dot
 docker/
