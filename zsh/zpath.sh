@@ -1,7 +1,12 @@
 source $ZSH/zsh/_settings.zsh
 
 # see http://zsh.sourceforge.net/Guide/zshguide02.html#l24
-typeset -U PATH path
+
+if [ -n "$ZSH_VERSION" ]; then
+	# Only execute in zsh
+	# Note that this script might be sourced from a bash via ~/.profile
+	typeset -U PATH path
+fi
 
 # Add system paths
 source $ZSH/system/env.zsh
@@ -15,5 +20,5 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # Add n to $PATH
-path=($N_PREFIX/bin $path)
+PATH="$N_PREFIX/bin:$PATH"
 export PATH

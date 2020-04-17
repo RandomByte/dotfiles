@@ -10,5 +10,5 @@ export ZSH=$HOME/.dotfiles
 # both here (if we're not a login shell) and from the .zprofile file (which
 # is only sourced if we are a login shell).
 if [[ $SHLVL == 1 && ! -o LOGIN ]]; then
-    source $ZSH/zsh/zpath.zsh
+    source $ZSH/zsh/zpath.sh
 fi

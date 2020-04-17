@@ -1,2 +1,2 @@
 # Also see .zshenv
-source $ZSH/zsh/zpath.zsh
+source $ZSH/zsh/zpath.sh
