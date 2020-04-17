@@ -7,6 +7,7 @@
 set -e
 
 export ZSH=$HOME/.dotfiles
+export ZSH_STR='$HOME/.dotfiles'
 
 mkdir -p $ZSH/repositories/
 
@@ -84,6 +85,21 @@ else
 	fi
 	$ZSH/repositories/nord-gnome-terminal/src/nord.sh
 
+	# Source dot-profile-include.sh in .profile
+	if [ -f "$HOME/.profile" ]; then
+		DOT_PROFILE_INCLUDE=". $ZSH_STR/zsh/dot-profile-include.sh"
+
+		if ! grep -qxF "$DOT_PROFILE_INCLUDE" "$HOME/.profile"; then
+			echo "Sourcing zsh environment in .profile..."
+			echo "$DOT_PROFILE_INCLUDE" >> "$HOME/.profile"
+		else
+			echo ".profile already sources zsh environment"
+		fi
+	else
+		echo "Could not find a .profile file in users home directory. Skipping inserting zsh env sourcing"
+	fi
+
+	# Prompt user since chsh requires user password
 	echo "Do you wish to change the users login shell to /usr/bin/zsh?"
 	read chsh_answer
 	if [ "$chsh_answer" != "${chsh_answer#[Yy]}" ] ;then

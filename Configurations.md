@@ -35,20 +35,3 @@ Various configurations for tools which are not (yet?) automatically configured.
 	{ "keys": ["ctrl+down"], "command": "select_lines", "args": {"forward": true } },
 ]
 ```
-
-### `.profile`
-TODO: Automate this
-
-```
-# if running bash (not zsh), source zsh env and profile to get expected environment
-# variables in apps launched from .desktop files
-if [ -n "$BASH_VERSION" ]; then
-    # source .zshenv (for $ZSH) and .zprofile (for $PATH) if they exist
-    if [ -f "$HOME/.zshenv" ] && [ -f "$HOME/.zprofile" ]; then
-		. "$HOME/.zshenv"
-		. "$HOME/.zprofile"
-	else
-		echo "Failed to find ~/.zshenv or ~/.zprofile"
-    fi
-fi
-```
