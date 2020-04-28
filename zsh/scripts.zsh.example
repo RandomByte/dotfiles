@@ -64,3 +64,7 @@ themed-ssh-replace-window () {
 themed-ssh-new-window () {
   gnome-terminal --window-with-profile="Nord SSH" -- ssh $@;
 }
+
+dev () {
+  cd ~/dev
+}
