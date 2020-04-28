@@ -47,10 +47,14 @@ me() {
   meta exec "$*" --exclude "${PWD##*/}" --exit-on-aggregate-error
 }
 
-md ()
-{
+md () {
   mkdir -p -- "$1" &&
     cd -P -- "$1" || return
+}
+
+gc() {
+  # From https://unix.stackexchange.com/a/97922
+  git clone "$1" && cd "$(basename "$1" .git)"
 }
 
 themed-ssh-replace-window () {
