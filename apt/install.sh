@@ -51,6 +51,7 @@ install lolcat
 # install gti
 install sl
 install figlet
+install python3-pip
 
 if ! dpkg -s sublime-text >/dev/null 2>&1; then
 	echo "Sublime Text not installed. Installing..."

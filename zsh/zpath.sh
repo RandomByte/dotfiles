@@ -21,4 +21,8 @@ fi
 
 # Add n to $PATH
 PATH="$N_PREFIX/bin:$PATH"
+
+# Add pyton/pip binaries to $PATH
+PATH="$HOME/.local/bin:$PATH"
+
 export PATH
