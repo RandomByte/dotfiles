@@ -6,6 +6,7 @@ alias wow='git status -sb'
 alias got='git'
 
 alias k='kubectl'
+alias docker-build-run-rm='docker run --rm -it $(docker build -q .)'
 alias bwd='pwd | sed -e "s:/:🥖:g"'
 alias lg="lazygit"
 
