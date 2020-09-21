@@ -15,6 +15,7 @@ brew 'htop'
 brew 'zsh-completions'
 brew 'zsh-autosuggestions'
 brew 'kubectl'
+brew 'hyperfine'
 brew 'git-lfs'
 brew 'hub'
 brew 'shellcheck'
@@ -23,6 +24,7 @@ brew 'yarn', args: ['ignore-dependencies'] # use node installed through n
 brew 'fd'
 brew 'n'
 brew 'neofetch'
+brew 'gh'
 
 cask 'aerial'
 
