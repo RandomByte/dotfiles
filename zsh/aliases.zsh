@@ -4,6 +4,7 @@ alias such='git'
 alias very='git'
 alias wow='git status -sb'
 alias got='git'
+alias g='gh'
 
 alias k='kubectl'
 alias docker-build-run-rm='docker run --rm -it $(docker build -q .)'
