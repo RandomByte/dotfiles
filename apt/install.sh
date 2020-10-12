@@ -60,3 +60,12 @@ if ! dpkg -s sublime-text >/dev/null 2>&1; then
 	sudo apt update
 	install sublime-text
 fi
+
+if ! dpkg -s gh >/dev/null 2>&1; then
+	echo "GitHub CLI not installed. Installing..."
+	# https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+	sudo apt-add-repository https://cli.github.com/packages
+	sudo apt update
+	install gh
+fi
