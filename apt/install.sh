@@ -33,7 +33,6 @@ install ca-certificates
 install curl
 install gnupg-agent
 install software-properties-common
-install geary
 install chrome-gnome-shell
 install gnome-tweak-tool
 install gufw
