@@ -40,6 +40,9 @@ else
 	curl -L https://raw.githubusercontent.com/tj/n/master/bin/n > $ZSH/bin/n
 	chmod +x $ZSH/bin/n
 
+	curl -L "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"  > $ZSH/bin/kubectl
+	chmod +x $ZSH/bin/kubectl
+
 	rm -rf $ZSH/z/
 	mkdir -p $ZSH/z/
 	curl -L https://github.com/rupa/z/archive/v1.9.tar.gz | tar xvz -C $ZSH/z/
