@@ -17,6 +17,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
     # Ruby
     source $ZSH/ruby/env.zsh
+else
+	test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+	# or just add /home/linuxbrew/.linuxbrew/bin to $PATH?
 fi
 
 # Add n to $PATH
