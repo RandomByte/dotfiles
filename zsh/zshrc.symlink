@@ -61,6 +61,7 @@ kubectl () { # lazy load of kubectl completions (they take ~500ms to load)
         KUBECTL_COMPLETE=1
     fi
     $commands[kubectl] $*
+    complete -F __start_kubectl k
 }
 helm () { # lazy load of helm completions
     if [[ -z $HELM_COMPLETE ]]
