@@ -48,6 +48,7 @@
 	cob = checkout -b
 	nb = "!f() { git checkout -b $1 origin/master; }; f"
 	wip = commit -am "WIP"
+	pu = push -u origin $(git symbolic-ref --short -q HEAD)
 	force = push -f
 	horse = push -f
 	rc = rebase --continue
