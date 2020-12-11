@@ -30,6 +30,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	$ZSH/homebrew/update.sh
 
 	# Install Yarn 1.x
+	echo "Installing Yarn 1.x..."
+	rm -rf $ZSH/bin/yarn/
 	mkdir -p $ZSH/bin/yarn/
 	curl -L https://yarnpkg.com/latest.tar.gz | tar xvz -C $ZSH/bin/yarn/ --strip-components 1
 else
