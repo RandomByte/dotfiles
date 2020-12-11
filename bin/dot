@@ -28,6 +28,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
 	# Update homebrew
 	$ZSH/homebrew/update.sh
+
+	# Install Yarn 1.x
+	mkdir -p $ZSH/bin/yarn/
+	curl -L https://yarnpkg.com/latest.tar.gz | tar xvz -C $ZSH/bin/yarn/ --strip-components 1
 else
 	# == Linux only ==
 
