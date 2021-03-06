@@ -54,9 +54,9 @@ else
 
 	rm -rf $ZSH/z/
 	mkdir -p $ZSH/z/
-	curl -L https://github.com/rupa/z/archive/v1.9.tar.gz | tar xvz -C $ZSH/z/
-	mv $ZSH/z/z-1.9/* $ZSH/z/ #*/
-	rmdir $ZSH/z/z-1.9
+	curl -L https://github.com/rupa/z/archive/v1.11.tar.gz | tar xvz -C $ZSH/z/
+	mv $ZSH/z/z-1.11/* $ZSH/z/ #*/
+	rmdir $ZSH/z/z-1.11
 
 	# Install zsh-completions
 	if [ -d "$ZSH/repositories/zsh-completions" ]; then
