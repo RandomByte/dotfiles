@@ -6,6 +6,7 @@ if [[ `uname` != "Linux" ]]; then
     echo "This install script is for Linux only and requires APT"; exit 1
 fi
 
+echo "Requesting sudo privileges for apt..."
 sudo apt update
 
 function install {
