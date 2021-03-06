@@ -20,6 +20,6 @@ alias get="curl -O -L"
 if [[ `uname` == "Linux" ]]; then
 	alias open="xdg-open"
 	alias .ssh=themed-ssh-replace-window
-	alias .sshn=themed-ssh-new-window
+	alias nssh=themed-ssh-new-window
 	alias fd=fdfind # fd was already taken in the repository
 fi
