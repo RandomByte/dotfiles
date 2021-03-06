@@ -49,6 +49,9 @@ else
 	curl -L "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"  > $ZSH/bin/kubectl
 	chmod +x $ZSH/bin/kubectl
 
+	curl -L https://github.com/cheat/cheat/releases/download/4.2.0/cheat-linux-amd64.gz | gunzip > $ZSH/bin/cheat
+	chmod +x $ZSH/bin/cheat
+
 	rm -rf $ZSH/z/
 	mkdir -p $ZSH/z/
 	curl -L https://github.com/rupa/z/archive/v1.9.tar.gz | tar xvz -C $ZSH/z/
